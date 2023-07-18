@@ -1,0 +1,29 @@
+<h2>Formulario de Coches</h2>
+<form #cocheForm="ngForm">
+  <input type="hidden" name="id" [(ngModel)]="nuevoDato.id">
+
+  <div>
+    <label>Modelo:</label>
+    <input type="text" name="modelo" [(ngModel)]="nuevoDato.modelo" required>
+  </div>
+
+  <div>
+    <label>Marca:</label>
+    <input type="text" name="marca" [(ngModel)]="nuevoDato.marca" required>
+  </div>
+
+  <div>
+    <label>Año:</label>
+    <input type="number" name="anio" [(ngModel)]="nuevoDato.anio" required>
+  </div>
+
+  <div>
+    <label>Kilómetros:</label>
+    <input type="number" name="km" [(ngModel)]="nuevoDato.km" required>
+  </div>
+
+  <div>
+    <button type="button" (click)="guardarCoche(cocheForm)" [disabled]="!cocheForm.form.valid">Guardar</button>
+    <button type="button" (click)="limpiarFormulario(cocheForm)">Cancelar</button>
+  </div>
+</form>
